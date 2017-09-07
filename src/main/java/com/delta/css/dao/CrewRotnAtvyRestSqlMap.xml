@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="catering">
+
+	<resultMap id="CrewRotnAtvyRest" type="com.delta.css.vo.CrewRotnAtvyRestDtlsVo">
+	<result property="evtTp" column="event" />
+	<result property="calDt" column="caldate" />
+		<result property="ordIdx" column="row_number" />
+		<result property="rotn.prngNb" column="ROTN_PRNG_NB" />
+		<result property="rotn.dutySqN" column="EMPL_ROTN_DUTY_SQ_NB" />
+		<result property="rotn.dutyRptTm" column="SCH_DUTY_RPT_GDTTM" />
+		<result property="rotn.dutyRlsTm" column="SCH_DUTY_RLS_GDTTM" />
+		<result property="rotn.bidPerdCd" column="CREW_BID_PERD_CD" />
+		<result property="rotn.bsCd" column="CREW_BS_CD" />
+		<result property="rotn.rotnBegDt" column="ROTN_BEG_DT" />
+		<result property="rotn.intlInd" column="INTL_ROTN_IND" />
+		<result property="rotn.rotnDup" column="ROTN_DUP_NB" />
+		<result property="rotn.crdMntCt" column="TOT_CRD_MNT_CT" />
+		<result property="rotn.schDprtCd" column="SCH_DPRT_ARPT_CD" />
+		<result property="rotn.schDprtCdDs" column="SCH_DPRT_ARPT_NM" />
+		<result property="rotn.schArrCd" column="SCH_ARR_ARPT_CD" />
+		<result property="rotn.schArrCdDs" column="SCH_ARR_ARPT_NM" />
+		<result property="rotn.mFtNb" column="MKD_FLT_NB" />
+		<result property="rotn.fOrgDt" column="FLT_ORIG_DT" />
+		<result property="rotn.psnTpCd" column="FA_PSTN_TYP_CD" />
+		<result property="rotn.legTp" column="EMPL_ROTN_LEG_TYP_CD" />
+		<result property="atvy.atvyCd" column="ATVY_STT_CD" />
+		<result property="atvy.atvyBegDt" column="ATVY_STT_BEG_GDTTM" />
+		<result property="atvy.atvyEndDt" column="ATVY_STT_END_GDTTM" />
+		<result property="atvy.atvyDs" column="ATVY_STT_DS" />
+		<result property="atvy.bs" column="ATVY_BS_CD" />
+		<result property="rotn.pltPstnCd" column="PLT_PSTN_CD" />
+		<result property="rotn.emplId" column="ROTN_EMPL_ID" />
+		<result property="atvy.emplId" column="ATVY_EMPL_ID" />
+		<result property="rst.emplId" column="RSET_EMPL_ID" />
+		<result property="atvy.prpyCd" column="ATVY_STT_PRPY_CD" />
+		<result property="atvy.emplRlCd" column="ATVY_EMPL_ROLE_CD" />
+		<result property="rotn.emplRlCd" column="ROTN_EMPL_ROLE_CD" />
+		<result property="rst.emplRlCd" column="RSET_EMPL_ROLE_CD" />
+		<result property="atvy.prpyNm" column="ATVY_STT_PRPY_DS" />
+		<result property="atvy.sttVal" column="ATVY_STT_PRPY_VAL_TXT" />
+		<result property="atvy.effDt" column="EFF_DT" />
+		<result property="atvy.expDt" column="EXP_DT" />
+		<result property="rst.rstTp" column="REST_TYPE" />
+		<result property="rst.begDt" column="REST_BEG_GDTTM" />
+		<result property="rst.endDt" column="REST_END_GDTTM" />
+		<result property="rst.htlNm" column="HOTEL_NAME" />
+		<result property="rst.cty" column="HOTEL_CITY" />
+		<result property="rst.ph" column="HOTEL_PHONE" />
+		<result property="rst.fax" column="HOTEL_FAX" />
+		<result property="rst.email" column="HOTEL_EMAIL" />
+		<result property="rst.ckin" column="HOTEL_CHECKIN" />
+		<result property="rst.ckot" column="HOTEL_CHECKOUT" />
+	</resultMap>
+
+	<select id="getCrewRotnAtvyRest" resultMap="CrewRotnAtvyRest" parameterType="com.delta.css.vo.CrewInfoInputVo">
+		select event, caldate, @row_number:=@row_number+1 AS row_number,
+                                                ROTN_PRNG_NB, CREW_BID_PERD_CD, CREW_BS_CD, ROTN_BEG_DT, INTL_ROTN_IND, TOT_CRD_MNT_CT, ROTN_EMPL_ROLE_CD, ROTN_DUP_NB,
+                                                SCH_DUTY_RPT_GDTTM, SCH_DUTY_RLS_GDTTM, EMPL_ROTN_DUTY_SQ_NB, SCH_DPRT_ARPT_CD, SCH_DPRT_ARPT_NM, SCH_ARR_ARPT_CD, SCH_ARR_ARPT_NM,
+                                                MKD_FLT_NB, FLT_ORIG_DT, PLT_PSTN_CD, FA_PSTN_TYP_CD, EMPL_ROTN_LEG_TYP_CD, ROTN_EMPL_ID,
+                                                
+                                                ATVY_STT_CD,  ATVY_STT_BEG_GDTTM,  ATVY_STT_END_GDTTM,  ATVY_STT_DS,  
+                                                ATVY_EMPL_ROLE_CD, ATVY_STT_PRPY_CD, ATVY_STT_PRPY_VAL_TXT,  ATVY_STT_PRPY_DS, EFF_DT,  EXP_DT, ATVY_EMPL_ID, atvy_crew_BS_CD,
+                                                
+                                                REST_TYPE,  REST_BEG_GDTTM,  REST_END_GDTTM,  HOTEL_NAME,  HOTEL_CITY, 
+                                                HOTEL_PHONE, HOTEL_FAX, HOTEL_EMAIL, HOTEL_CHECKIN, HOTEL_CHECKOUT, RSET_EMPL_ID, RSET_EMPL_ROLE_CD /*, row_number()*/
+from(
+                                (select 'ROTN' as event, SCH_DUTY_RPT_GDTTM caldate,
+                                                ROTN_PRNG_NB, CREW_BID_PERD_CD, CREW_BS_CD, ROTN_BEG_DT, INTL_ROTN_IND, TOT_CRD_MNT_CT, EMPL_ROLE_CD as ROTN_EMPL_ROLE_CD, ROTN_DUP_NB,
+                                                SCH_DUTY_RPT_GDTTM, SCH_DUTY_RLS_GDTTM, EMPL_ROTN_DUTY_SQ_NB, SCH_DPRT_ARPT_CD, SCH_DPRT_ARPT_NM, SCH_ARR_ARPT_CD, SCH_ARR_ARPT_NM,
+                                                MKD_FLT_NB, FLT_ORIG_DT, PLT_PSTN_CD, FA_PSTN_TYP_CD, EMPL_ROTN_LEG_TYP_CD, EMPL_ID as ROTN_EMPL_ID,
+                                                
+                                                null as ATVY_STT_CD,  null as ATVY_STT_BEG_GDTTM,  null as ATVY_STT_END_GDTTM,  null as ATVY_STT_DS,  
+                                                null as ATVY_EMPL_ROLE_CD, null as ATVY_STT_PRPY_CD, null as ATVY_STT_PRPY_VAL_TXT,  null as ATVY_STT_PRPY_DS, null as EFF_DT,  null as EXP_DT, null as ATVY_EMPL_ID, null as atvy_crew_BS_CD,
+                                                
+                                                null as REST_TYPE,  null as REST_BEG_GDTTM,  null as REST_END_GDTTM,  null as HOTEL_NAME,  null as HOTEL_CITY, 
+                                                null as HOTEL_PHONE, null as HOTEL_FAX, null as HOTEL_EMAIL, null as HOTEL_CHECKIN, null as HOTEL_CHECKOUT, null as RSET_EMPL_ID, null as RSET_EMPL_ROLE_CD
+                                from crew.rotation_details
+                                where  EMPL_ID = #{emplId} and  year(SCH_DUTY_RPT_GDTTM) = year(STR_TO_DATE(#{date}, '%Y-%m-%d')) and 
+                                                month(SCH_DUTY_RPT_GDTTM) = month(STR_TO_DATE(#{date}, '%Y-%m-%d'))
+                                ) 
+                union
+                                (select 'ATVY' as event, ATVY_STT_BEG_GDTTM caldate,
+                                                null as ROTN_PRNG_NB, null as CREW_BID_PERD_CD, null as CREW_BS_CD, null as ROTN_BEG_DT, null as INTL_ROTN_IND, null as TOT_CRD_MNT_CT, null as ROTN_EMPL_ROLE_CD, null as ROTN_DUP_NB,
+                                                null as SCH_DUTY_RPT_GDTTM, null as SCH_DUTY_RLS_GDTTM, null as EMPL_ROTN_DUTY_SQ_NB, null as SCH_DPRT_ARPT_CD, null as SCH_DPRT_ARPT_NM, null as SCH_ARR_ARPT_CD, null as SCH_ARR_ARPT_NM,
+                                                null as MKD_FLT_NB, null as FLT_ORIG_DT, null as PLT_PSTN_CD, null as FA_PSTN_TYP_CD, null as EMPL_ROTN_LEG_TYP_CD, null as ROTN_EMPL_ID,
+                                                
+                                                ATVY_STT_CD,  ATVY_STT_BEG_GDTTM,  ATVY_STT_END_GDTTM,  ATVY_STT_DS,  
+                                                EMPL_ROLE_CD as ATVY_EMPL_ROLE_CD, ATVY_STT_PRPY_CD, ATVY_STT_PRPY_VAL_TXT,  ATVY_STT_PRPY_DS, EFF_DT,  EXP_DT, EMPL_ID as ATVY_EMPL_ID, crew_BS_CD as atvy_crew_BS_CD,
+                                                
+                                                null as REST_TYPE,  null as REST_BEG_GDTTM,  null as REST_END_GDTTM,  null as HOTEL_NAME,  null as HOTEL_CITY, 
+                                                null as HOTEL_PHONE, null as HOTEL_FAX, null as HOTEL_EMAIL, null as HOTEL_CHECKIN, null as HOTEL_CHECKOUT, null as RSET_EMPL_ID, null as RSET_EMPL_ROLE_CD
+                                from crew.activity_details
+                                where  EMPL_ID = #{emplId} and  year(ATVY_STT_BEG_GDTTM) = year(STR_TO_DATE(#{date}, '%Y-%m-%d')) and 
+                                                month(ATVY_STT_BEG_GDTTM) = month(STR_TO_DATE(#{date}, '%Y-%m-%d'))
+                                ) 
+                union
+                                (select concat('REST-', REST_TYPE) as event, REST_BEG_GDTTM caldate,
+                                                null as ROTN_PRNG_NB, null as CREW_BID_PERD_CD, null as CREW_BS_CD, null as ROTN_BEG_DT, null as INTL_ROTN_IND, null as TOT_CRD_MNT_CT, null as ROTN_EMPL_ROLE_CD, null as ROTN_DUP_NB,
+                                                null as SCH_DUTY_RPT_GDTTM, null as SCH_DUTY_RLS_GDTTM, null as EMPL_ROTN_DUTY_SQ_NB, null as SCH_DPRT_ARPT_CD, null as SCH_DPRT_ARPT_NM, null as SCH_ARR_ARPT_CD, null as SCH_ARR_ARPT_NM,
+                                                null as MKD_FLT_NB, null as FLT_ORIG_DT, null as PLT_PSTN_CD, null as FA_PSTN_TYP_CD, null as EMPL_ROTN_LEG_TYP_CD, null as ROTN_EMPL_ID,
+                                                
+                                                null as ATVY_STT_CD,  null as ATVY_STT_BEG_GDTTM,  null as ATVY_STT_END_GDTTM,  null as ATVY_STT_DS,  
+                                                null as ATVY_EMPL_ROLE_CD, null as ATVY_STT_PRPY_CD, null as ATVY_STT_PRPY_VAL_TXT,  null as ATVY_STT_PRPY_DS, null as EFF_DT,  null as EXP_DT, null as ATVY_EMPL_ID, null as atvy_crew_BS_CD,
+                                
+                                                REST_TYPE,  REST_BEG_GDTTM,  REST_END_GDTTM,  HOTEL_NAME,  HOTEL_CITY, 
+                                                HOTEL_PHONE, HOTEL_FAX, HOTEL_EMAIL, HOTEL_CHECKIN, HOTEL_CHECKOUT, EMPL_ID as RSET_EMPL_ID, EMPL_ROLE_CD as RSET_EMPL_ROLE_CD
+                                from crew.rest_details
+                                where EMPL_ID = #{emplId} and  year(REST_BEG_GDTTM) = year(STR_TO_DATE(#{date}, '%Y-%m-%d')) and 
+                                                month(REST_BEG_GDTTM) = month(STR_TO_DATE(#{date}, '%Y-%m-%d'))
+                                )
+) as allEvents, (SELECT @row_number:=0) AS t
+order by caldate desc
+
+
+	</select>
+
+
+
+</mapper>
