@@ -2,7 +2,7 @@ package com.delta.css.excp;
 
 public class DataAcesExcp extends Exception {
     private static final long serialVersionUID = 1L;
-    private Exception exception;
+    private final Exception exception;
 
     /**
      * Creates a new DataAccessException wrapping another exception, and with a
@@ -73,6 +73,7 @@ public class DataAcesExcp extends Exception {
         return exception == null ? this : exception;
     }
 
+    @Override
     public String toString() {
 
         if (exception instanceof DataAcesExcp) {

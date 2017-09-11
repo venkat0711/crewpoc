@@ -1,7 +1,5 @@
 package com.delta.css.utils;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import org.springframework.stereotype.Component;
 //import com.delta.soa.flight.operations.meal.v1.EndPoint;
 
@@ -57,6 +55,8 @@ public class CssApiCnst {
     public static final String APP_ROOT = "/crew";
     public static final String APP_NAME = "Meal API";
     public static final String APP_DESC = "This API provides availability and count of meals by passengers, cabin, and seats.";
+    public static String HOST = "52.1.2.26";
+    public static String PORT = "3306";
 
     
     public static String getPrpyLoc() {

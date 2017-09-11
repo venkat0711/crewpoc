@@ -17,8 +17,7 @@ import org.apache.log4j.PropertyConfigurator;
 public class CssPropsUtils {
 
     private final static Logger LOGGER = Logger.getLogger(CssPropsUtils.class);
-    private static Properties properties = new Properties();
-    public static CssPropsUtils propertiesUtils = null;
+    private Properties properties = new Properties();
 
     /**
      * Load inputstream from classloader
@@ -45,7 +44,7 @@ public class CssPropsUtils {
             throws FileNotFoundException {
         String propFilePath = System.getProperty(CssApiCnst.RUNTIME_ENVIRONMENT);
         File propertyFile = new File(propFilePath + resourceName);
-        FileInputStream in = null;
+        FileInputStream in;
         in = new FileInputStream(propertyFile);
         return new BufferedInputStream(in);
     }
@@ -57,16 +56,11 @@ public class CssPropsUtils {
      */
     private void loadPropertiesFromInputStream(InputStream is) throws IOException {
     	LOGGER.debug("Loading MealApi.properties");
-        properties.load(is);
+        getProperties().load(is);
         is.close();
     }
 
-    public static CssPropsUtils getInstance() {
-        if (null == propertiesUtils) {
-            propertiesUtils = new CssPropsUtils();
-        }
-        return propertiesUtils;
-    }
+  
 
     private static Properties getPrpyFile() {
         Properties props = new Properties();
@@ -74,9 +68,7 @@ public class CssPropsUtils {
         	LOGGER.debug("getPrpyFile: " + CssApiCnst.SVC_PROP_FILE);
             props.load(new FileInputStream(CssApiCnst.getPrpyLoc() + CssApiCnst.SVC_PROP_FILE));
             PropertyConfigurator.configure(props);
-        } catch (FileNotFoundException e) {
-        	LOGGER.error(e);
-        } catch (java.io.IOException e) {
+        } catch (IOException e) {
         	LOGGER.error(e);
         }
         return props;
@@ -88,11 +80,11 @@ public class CssPropsUtils {
      * @throws FileNotFoundException , IOException
      */
     public void loadProperties() throws FileNotFoundException, IOException {
-        if (properties.isEmpty()) {
-            properties = getPrpyFile();
+        if (getProperties().isEmpty()) {
+            setProperties(getPrpyFile());
         }
-        if (properties.isEmpty()) {
-            InputStream is = null;
+        if (getProperties().isEmpty()) {
+            InputStream is;
             is = getInputStreamFromClassLoader(CssApiCnst.SVC_PROP_FILE);
             if (is == null) {
                 is = getPropertiesFromWorkingDirectory(CssApiCnst.SVC_PROP_FILE);
@@ -111,10 +103,10 @@ public class CssPropsUtils {
      * @throws Exception
      */
     public String getProperty(String propertyName) throws FileNotFoundException, IOException {
-        if (properties.isEmpty()) {
+        if (getProperties().isEmpty()) {
             loadProperties();
         }
-        return properties.getProperty(propertyName);
+        return getProperties().getProperty(propertyName);
     }
 
     /**
@@ -122,9 +114,11 @@ public class CssPropsUtils {
      * 
      * @param propertyName
      * @return
+     * @throws IOException 
+     * @throws FileNotFoundException 
      * @throws Exception
      */
-    public String getAvailableProperty(String propertyName) throws Exception {
+    public String getAvailableProperty(String propertyName) throws FileNotFoundException, IOException  {
         return getProperty(propertyName);
     }
 
@@ -135,11 +129,21 @@ public class CssPropsUtils {
     public static String getRuntimeEnvt() {
         String prpy = System.getProperty(CssApiCnst.RUNTIME_ENVIRONMENT);
         if (prpy == null) {
-            System.err.println("Missing system property - runtime environment ["
+        	LOGGER.info("Missing system property - runtime environment ["
                     + CssApiCnst.RUNTIME_ENVIRONMENT + "]");
         }
 
         return prpy;
 
     }
+
+	public Properties getProperties() {
+		return properties;
+	}
+
+	public void setProperties(Properties properties) {
+		this.properties = properties;
+	}
+
+	
 }

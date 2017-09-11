@@ -81,6 +81,7 @@ public class BsDbCon {
         } catch (Exception e) {
             throw new DbSvcExcp(e);
         } finally {
+        	if (sqlSession!=null)
             sqlSession.close();
         }
         return list;

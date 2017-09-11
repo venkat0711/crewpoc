@@ -27,16 +27,14 @@ public class DataSrcConfig {
     @Bean
     public DataSource getDataSource() {
 
-    	System.out.println("Database Connection ....");
     	DriverManagerDataSource dataSource = new DriverManagerDataSource();
         try {
             dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-            //dataSource.setUsername("root");
-            //dataSource.setPassword("admin");
-            //dataSource.setUrl("jdbc:mysql://10.245.231.23:3306/crew");
-			dataSource.setUsername("crew_user");
+            dataSource.setUsername("crew_user");
             dataSource.setPassword("Dev0psl@b");
-            dataSource.setUrl("jdbc:mysql://52.1.2.26:3306/crew");
+            dataSource.setUrl("jdbc:mysql://" + CssApiCnst.HOST + ":" + CssApiCnst.PORT + "/crew");
+            
+
         } catch (IllegalArgumentException e) {
             LOGGER.debug("In side DataSrcConfig IllegalArgumentException error:" + e.getMessage());
         }

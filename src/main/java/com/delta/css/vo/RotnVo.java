@@ -23,6 +23,24 @@ public class RotnVo {
     private String emplRlCd;
     private String emplId;
     private String pltPstnCd;
+    private String schArrGdttm; 
+    private String schDptrGdttm;
+    
+    public String getSchArrGdttm() {
+		return schArrGdttm;
+	}
+
+	public void setSchArrGdttm(String schArrGdttm) {
+		this.schArrGdttm = schArrGdttm;
+	}
+
+	public String getSchDptrGdttm() {
+		return schDptrGdttm;
+	}
+
+	public void setSchDptrGdttm(String schDptrGdttm) {
+		this.schDptrGdttm = schDptrGdttm;
+	}
     
     /**
      * @return the prngNb

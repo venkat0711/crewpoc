@@ -14,6 +14,221 @@ public class RstVo {
     private String ckot;
     private String emplRlCd;
     private String emplId;
+    private String genArptCd;
+    private String genArptLoc;
+    private String genDispOrd;
+    private String cutoffTimeFrom;
+    private String cutoffTimeTo;
+    private String genComment;
+    private String arptToHotelDomTo;
+    private String arptToHotelDomFrom;
+    private String arptToHotelDomTotal;
+    private String arptToHotelIntlFrom;
+    private String arptToHotelIntlTo;
+    private String arptToHotelIntlTotal;
+    private String hotelToAirportDomTo;
+    private String hotelToAirportDomFrom;
+    private String hotelToAirportDomTotal;
+    private String hotelToAirportIntlFrom;
+    private String hotelToAirportIntlTo;
+    private String hotelToAirportIntlTotal;
+    private String providerName;
+    private String transComment;
+    private String hotelTransBeginDate;
+    private String hotelsArptBeginDate;
+    private String hotelsArptEndDate;
+    private String travelComment;
+    public String getGenArptCd() {
+		return genArptCd;
+	}
+
+	public void setGenArptCd(String genArptCd) {
+		this.genArptCd = genArptCd;
+	}
+
+	public String getGenArptLoc() {
+		return genArptLoc;
+	}
+
+	public void setGenArptLoc(String genArptLoc) {
+		this.genArptLoc = genArptLoc;
+	}
+
+	public String getGenDispOrd() {
+		return genDispOrd;
+	}
+
+	public void setGenDispOrd(String genDispOrd) {
+		this.genDispOrd = genDispOrd;
+	}
+
+	public String getCutoffTimeFrom() {
+		return cutoffTimeFrom;
+	}
+
+	public void setCutoffTimeFrom(String cutoffTimeFrom) {
+		this.cutoffTimeFrom = cutoffTimeFrom;
+	}
+
+	public String getCutoffTimeTo() {
+		return cutoffTimeTo;
+	}
+
+	public void setCutoffTimeTo(String cutoffTimeTo) {
+		this.cutoffTimeTo = cutoffTimeTo;
+	}
+
+	public String getGenComment() {
+		return genComment;
+	}
+
+	public void setGenComment(String genComment) {
+		this.genComment = genComment;
+	}
+
+	public String getArptToHotelDomTo() {
+		return arptToHotelDomTo;
+	}
+
+	public void setArptToHotelDomTo(String arptToHotelDomTo) {
+		this.arptToHotelDomTo = arptToHotelDomTo;
+	}
+
+	public String getArptToHotelDomFrom() {
+		return arptToHotelDomFrom;
+	}
+
+	public void setArptToHotelDomFrom(String arptToHotelDomFrom) {
+		this.arptToHotelDomFrom = arptToHotelDomFrom;
+	}
+
+	public String getArptToHotelDomTotal() {
+		return arptToHotelDomTotal;
+	}
+
+	public void setArptToHotelDomTotal(String arptToHotelDomTotal) {
+		this.arptToHotelDomTotal = arptToHotelDomTotal;
+	}
+
+	public String getArptToHotelIntlFrom() {
+		return arptToHotelIntlFrom;
+	}
+
+	public void setArptToHotelIntlFrom(String arptToHotelIntlFrom) {
+		this.arptToHotelIntlFrom = arptToHotelIntlFrom;
+	}
+
+	public String getArptToHotelIntlTo() {
+		return arptToHotelIntlTo;
+	}
+
+	public void setArptToHotelIntlTo(String arptToHotelIntlTo) {
+		this.arptToHotelIntlTo = arptToHotelIntlTo;
+	}
+
+	public String getArptToHotelIntlTotal() {
+		return arptToHotelIntlTotal;
+	}
+
+	public void setArptToHotelIntlTotal(String arptToHotelIntlTotal) {
+		this.arptToHotelIntlTotal = arptToHotelIntlTotal;
+	}
+
+	public String getHotelToAirportDomTo() {
+		return hotelToAirportDomTo;
+	}
+
+	public void setHotelToAirportDomTo(String hotelToAirportDomTo) {
+		this.hotelToAirportDomTo = hotelToAirportDomTo;
+	}
+
+	public String getHotelToAirportDomFrom() {
+		return hotelToAirportDomFrom;
+	}
+
+	public void setHotelToAirportDomFrom(String hotelToAirportDomFrom) {
+		this.hotelToAirportDomFrom = hotelToAirportDomFrom;
+	}
+
+	public String getHotelToAirportDomTotal() {
+		return hotelToAirportDomTotal;
+	}
+
+	public void setHotelToAirportDomTotal(String hotelToAirportDomTotal) {
+		this.hotelToAirportDomTotal = hotelToAirportDomTotal;
+	}
+
+	public String getHotelToAirportIntlFrom() {
+		return hotelToAirportIntlFrom;
+	}
+
+	public void setHotelToAirportIntlFrom(String hotelToAirportIntlFrom) {
+		this.hotelToAirportIntlFrom = hotelToAirportIntlFrom;
+	}
+
+	public String getHotelToAirportIntlTo() {
+		return hotelToAirportIntlTo;
+	}
+
+	public void setHotelToAirportIntlTo(String hotelToAirportIntlTo) {
+		this.hotelToAirportIntlTo = hotelToAirportIntlTo;
+	}
+
+	public String getHotelToAirportIntlTotal() {
+		return hotelToAirportIntlTotal;
+	}
+
+	public void setHotelToAirportIntlTotal(String hotelToAirportIntlTotal) {
+		this.hotelToAirportIntlTotal = hotelToAirportIntlTotal;
+	}
+
+	public String getProviderName() {
+		return providerName;
+	}
+
+	public void setProviderName(String providerName) {
+		this.providerName = providerName;
+	}
+
+	public String getTransComment() {
+		return transComment;
+	}
+
+	public void setTransComment(String transComment) {
+		this.transComment = transComment;
+	}
+
+	public String getHotelTransBeginDate() {
+		return hotelTransBeginDate;
+	}
+
+	public void setHotelTransBeginDate(String hotelTransBeginDate) {
+		this.hotelTransBeginDate = hotelTransBeginDate;
+	}
+
+	public String getHotelsArptBeginDate() {
+		return hotelsArptBeginDate;
+	}
+
+	public void setHotelsArptBeginDate(String hotelsArptBeginDate) {
+		this.hotelsArptBeginDate = hotelsArptBeginDate;
+	}
+
+	public String getHotelsArptEndDate() {
+		return hotelsArptEndDate;
+	}
+
+	public void setHotelsArptEndDate(String hotelsArptEndDate) {
+		this.hotelsArptEndDate = hotelsArptEndDate;
+	}
+
+	public String getTravelComment() {
+		return travelComment;
+	}
+
+	public void setTravelComment(String travelComment) {
+		this.travelComment = travelComment;
+	}
     
     /**
      * @return the rstTp

@@ -4,7 +4,7 @@ package com.delta.css.excp;
 
 public class BsnObjExcp extends Exception {
     private static final long serialVersionUID = 1L;
-    private Exception exception;
+    private final Exception exception;
 
     /**
      * Creates a new BsnObjExcp wrapping another exception, and with a detail
@@ -75,6 +75,7 @@ public class BsnObjExcp extends Exception {
         return exception == null ? this : exception;
     }
 
+    @Override
     public String toString() {
 
         if (exception instanceof BsnObjExcp) {

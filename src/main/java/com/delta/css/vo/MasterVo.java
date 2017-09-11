@@ -2,12 +2,17 @@ package com.delta.css.vo;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 
 public class MasterVo {
 
-	private HashMap<String, List<CrewRotnAtvyRestDtlsVo>> crewRotnAtvyRestDtlsMap=null;
+	private Map<String, List<CrewRotnAtvyRestDtlsVo>> crewRotnAtvyRestDtlsMap=null;
 
-	public HashMap<String, List<CrewRotnAtvyRestDtlsVo>> getCrewRotnAtvyRestDtlsMap() {
+	public Map<String, List<CrewRotnAtvyRestDtlsVo>> getCrewRotnAtvyRestDtlsMap() {
 		return crewRotnAtvyRestDtlsMap;
 	}
 
@@ -15,6 +20,18 @@ public class MasterVo {
 		this.crewRotnAtvyRestDtlsMap = crewRotnAtvyRestDtlsMap;
 	}
 
+	private String appMsg;
+
+	public String getAppMsg() {
+		return appMsg;
+	}
+
+	public void setAppMsg(String appMsg) {
+		this.appMsg = appMsg;
+	}
+	
+	
+	
 	
 	
 }

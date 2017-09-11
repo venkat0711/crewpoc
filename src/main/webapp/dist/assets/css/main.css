@@ -1,0 +1,676 @@
+.clear {
+    clear: both;
+}
+
+header {
+
+}
+
+header .top-header {
+    background: url(../images/Right-top-header.png) repeat-x;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 2rem;
+    border-bottom: 2px solid #d81734;
+}
+
+header .top-header .crewlogo {
+    background: url(../images/delta-crew-logo.png);
+    background-repeat: no-repeat;
+    height: 3.7rem;
+    width: 11.3rem;
+    float: left;
+}
+
+header .top-header .crewlogo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+header .top-header .credential {
+    float: right;
+}
+
+header .top-header .credential a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .header-alert {
+    background: url(../images/Header-bg-pattern.png);
+    background-repeat: no-repeat;
+    background-color: #d31a31;
+    font-size: 1.2em;
+    color: #fff;
+    border-top: #750f23 1px solid;
+    padding: 0 25px;
+}
+
+header .header-alert .notification {
+    background: url(../images/Alarm.png);
+    background-repeat: no-repeat;
+    height: 5.3rem;
+    background-position: 0% -4px;
+}
+
+header .header-alert .flight-rotation {
+    font-size: 1.4rem;
+    background: url(../images/Rotation-32.png);
+    background-repeat: no-repeat;
+    height: 5.3rem;
+    background-position: 0 9px;
+    padding-left: 5rem;
+    padding-top: 1.4rem;
+}
+
+header .header-alert .cross-alarm {
+    background: url(../images/Cross-Alarm.png);
+    background-repeat: no-repeat;
+    height: 5.3rem;
+    float: right;
+    width: 5%;
+    background-position: 0 10px;
+    cursor: pointer;
+}
+
+.row.time-det {
+    padding: 15px 5px;
+}
+
+.separator {
+    border-left: 1px solid red;
+    padding: 0;    
+}
+
+#main-content {
+
+}
+
+#calendar {
+    margin: 20px 0 0;
+}
+
+.panel {
+    border: none;
+}
+
+.panel .panel-body {
+    background: none;
+    border-radius: 2px;
+    border: none;
+    box-shadow: none;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top;    
+    background: #FFFFFF;
+    border-radius: 2px;
+    padding: 0px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)!important;
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)!important;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)!important; */
+}
+
+.panel-wrap {
+    margin-bottom: 10px; 
+}
+
+.panel .panel-heading {
+    background-color: #003969;
+    border-color: #003969;
+}
+
+.panel .panel-heading .panel-title {
+    text-align: center;
+}
+
+.calendar {
+    font-size: 1em;    
+    border: 1px #003969 solid;
+    border-top: none;
+}
+
+.calendar .cal-header {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.calendar .cal-view-wrapper .cal-view {
+    width: 100%;
+    overflow: hidden;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate {
+    width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-day-header {
+    width: 100%;    
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-day-header .cal-day-head-col {
+    width: 14%;
+    height: 30px;
+    text-align: right;
+    font-size: 0.8em;
+    border: 2px solid #c6def3;
+    border-width: 0px 1px 0 1px;
+    border-bottom-width: 1px;
+    padding-right: 4px;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-day-header .cal-day-head-col:first-child {
+    border-left-width: 0;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-day-header .cal-day-head-col:last-child {
+    border-right-width: 0;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week {
+    height: 70px;
+    font-size: 0.8em;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content {
+    border-top-width: 0;
+    border-width: 1px 0 0 1px;
+    vertical-align: top;
+    border: 1px solid #c6def3;    
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content:first-child {
+    border-left-width: 0;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content:last-child {
+    border-right-width: 0;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content .cal-day-number {
+    float: right;
+    padding: 2px 4px;
+    font-size: 1.2em;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week:last-child .cal-day-content {
+    border-bottom-width: 0;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.dt-today {
+    background: #fcf8e3;
+    font-weight: bold;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event {
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .rotation {
+    background: url("../images/Rotation-16") no-repeat;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: 5px;
+    right: 35px;
+}
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .rest {
+    background: url("../images/Rest-16.png") no-repeat;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: 5px;
+    right: 5px;
+}
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .activity {
+    background: url("../images/Activity-16.png") no-repeat;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: 5px;
+    right: 20px;    
+}
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .rotation {
+    background: url("../images/Rotation-16.png") no-repeat;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: 5px;
+    right: 38px;    
+}
+
+.calendar td {
+    padding: 0;
+    vertical-align: top;
+}
+
+.calendar .cal-header td {
+    white-space: nowrap;
+}
+
+.other-month {
+    cursor: default !important;
+}
+
+.other-month .cal-day-number {
+    opacity: 0.3;
+    filter: alpha(opacity=30);    
+}
+
+.loginBox {
+    width: 100%;
+    border: 1px #003969 solid;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+.loginBox input {
+    width: 100%;
+    height: 35px; 
+}
+.accordian {
+    margin-top: 20px;
+}
+.panel-group .panel {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #EEEEEE;
+}
+
+.panel-default > .panel-heading {
+    padding: 0;
+    border-radius: 0;
+    color: #212121;
+    background-color: #D3E5FF;
+    /*border-color: #EEEEEE;*/
+}
+
+.panel-title {
+    font-size: 14px;
+}
+
+.panel-title > a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.panel-title .icon {    
+    float: left;
+    height: 3.2rem;
+    margin-top: -8px;
+    margin-left: -20px;
+    padding: 8px 25px 5px 5px;
+    border-right: 1px solid #ccc;
+}
+
+.panel-title .icon span {
+    padding-left: 5rem;
+}
+
+.panel-title .icon.rotation {
+    background: url("../images/Rotation-32.png") 1.5rem top no-repeat
+}
+
+.panel-title .icon.activity {
+    background: url("../images/Activity-32.png") 1.5rem top no-repeat !important
+}
+
+.panel-title .icon.rest {
+    background: url("../images/Rest-32.png") 1.5rem top no-repeat !important
+}
+
+.panel-title .dt-1 {
+    margin-left: -20px;
+}
+
+.panel-title .dt-2 {
+    margin-left: 20px;
+}
+
+.more-less {
+    float: right;
+    color: #212121;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    /*border-top-color: #EEEEEE;*/
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 5px;
+}
+
+
+.head-block div {
+    border-right: 1px dotted #ccc;
+    padding: 5px 8px;
+    border-bottom: 2px solid #ccc;
+}
+
+.head-block div:last-child {
+    border-right: none;
+}
+
+.head-block div span {
+    display: block;
+    font-weight: bold;
+    min-height: 20px;    
+}
+
+.dest-box {
+    padding: 20px 10px;
+}
+
+.dest-box .journey-arrow {
+    background: url("../images/Arrow-Connecting-Journey.png");
+    background-repeat: no-repeat;
+    height: 10rem;
+    background-position: 2.5rem 5rem;
+}
+.dest-box .return-journey-arrow {
+    background: url(../images/Arrow-Return-Journey.png);
+    background-repeat: no-repeat;
+    height: 10rem;
+    background-position: 2.5rem 5rem;
+}
+
+.dest-box .toBox, .fromBox {
+    height: 14rem;
+    border: 1px solid #899EB9;
+    margin-top: 10px; 
+    padding-left: 0;
+    padding-right: 0;
+} 
+
+.dest-box .fromText, .toText {
+    font-size: 2.5em;
+    color: #D81734;
+    text-align: center;
+}
+
+.dest-box .fromArea, .toArea {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #42638F; 
+    text-align: center;
+}
+
+.dest-box .fromTime, .toTime {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+    background: #F2F8FF;
+    height: 4.7rem;
+    padding-top: 15px;
+    width: 18.7em;
+    margin-left: 1.2em;
+}
+
+.rotation-information {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.rotation-information .row {
+    padding: 8px 0;
+}
+
+.rotation-information .row:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+
+.rest-information {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.rest-information .row {
+    padding: 8px 0;
+}
+
+
+.rest-information .row .rest-data {
+    font-weight: normal !important;
+}
+
+.rest-information .row:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.activity-box {
+    margin: 1rem 0 2rem 0;
+    border: 1px solid #899EB9;
+    text-align: center;
+    padding: 0rem;
+}
+
+.activity-box h3 {
+    color: #D81734;
+    font-size: 1.5em;
+}
+
+.activity-box .activity-time-box {
+    border: 1px solid #899EB9;
+    background: #F2F8FF;
+    padding: 2rem 0;
+    margin: 2rem 1rem;
+}
+
+#nextMonth, #prevMonth {
+    cursor: pointer;
+}
+
+.rest .restInfoWrapper {
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+.rest .restHead {
+    font-weight: bold;
+    font-size: 20px;
+    color: #D81734;
+}
+
+.restInfoWrapper  .info {
+    margin-top: 10px;
+}
+
+.restInfoWrapper  .info .grey-font {
+    color: #707070;
+}
+
+.restInfoWrapper  .infoVal {
+    font-weight: bold;
+}
+
+.crew-tab .nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.crew-tab .nav-tabs>li.active {
+    border-bottom: 5px solid #D81734;
+    border-radius: 0;
+}
+
+.crew-tab .nav-tabs>li.active>a, .uib-tab.active>a {
+    color: #D81734 !important;
+    padding-left: 1.5rem;
+    border: none;
+    border-radius: 0;
+}
+
+.sub-header {
+    background-color: #E2EDEF !important;
+    font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+    .head-block div {
+        padding: 5px 2px;
+    }
+    .panel-title .dt-2 {
+        margin-left: 5px;
+    }
+    .panel-title .icon {
+        border-right: none;
+    }
+    .dest-box .fromTime, .toTime {
+        width: 15.0em;
+    }
+}
+
+@media (max-width: 768px) {
+    .row.time-det {
+        padding: 5px;
+    }
+    .dest-box .fromTime, .toTime {
+        width: 20.8em;
+    }
+}
+
+@media (max-width: 767px) {    
+    header .top-header .credential {
+        font-size: 13px;
+    }
+
+    header .header-alert {
+        padding: 0 10px;
+    }
+
+    header .top-header {
+        padding: 10px 5px;
+    }    
+
+    .time-det .col-xs-12 {        
+        font-size: 15px;
+    }
+
+    .row.time-det {
+        padding: 10px 5px !important;
+    }   
+
+    .calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week {
+        height: 40px;
+    }
+
+    .loginBox {
+        margin-top: 0px;
+    } 
+
+    .head-block div {
+        padding: 5px 2px;
+        border-bottom: none;
+    }
+
+    .head-block div span {
+        display: inline;
+    }   
+    .head-block div:last-child {
+        border-right: 1px solid #ccc;
+    }  
+    .dest-box .fromTime, .toTime {
+        width: 41.7em;
+    }
+      
+}
+
+@media (max-width: 568px) { 
+    .dest-box .fromTime, .toTime {
+        width: 34em;
+    }
+}
+
+@media (max-width: 400px) {    
+    
+    .notification {
+        background-size: 24px 34px !important;
+        background-position: 0% 10px !important;
+    }
+
+    .flight-rotation {
+        background-size: 23px 23px !important;
+        background-position: 0rem 1.5rem !important;
+        padding-left: 28px !important;
+        padding-right: 0 !important;
+        font-size: 12px !important;
+        padding-top: 20px !important;
+    }
+
+    .col-xs-5 {
+        padding-left: 0;
+    }
+
+    .cross-alarm {
+        background-size: 23px 23px !important;
+        top: 5px;
+    }
+
+    .time-det .col-xs-12 {        
+        font-size: 12px !important;
+    }
+
+    .calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week {
+        height: 30px;
+    }
+
+    .panel-title .icon {
+        width: 100% !important;
+        border-right: none;
+    }
+
+    .panel-title .dt-1 {
+        margin-left: 0px;
+        display: block;
+    }
+    
+    .panel-title .dt-2 {
+        margin-left: 0px;
+        display: block;
+    }
+
+    .head-block {
+        font-size: 12px;
+    }
+
+    .rotation-information .row .col-xs-3 {
+        padding-left:0; 
+    }
+
+    .activity-box h3 {
+        color: #D81734;
+        font-size: 0.8em;
+    }
+
+    .dest-box .fromTime, .toTime {
+        width: 19.3em;
+    }
+}
+
+@media(max-width: 320px) {
+    .header-alert {
+        display: none;
+    }
+
+    .dest-box .fromTime, .toTime {
+        font-size: 11px;
+        width: 17.9em;
+        margin-left: 1.3em;
+    }
+
+
+    .activity-box .activity-time-box {
+        margin: 2rem 0.5rem;
+    }
+
+    
+}

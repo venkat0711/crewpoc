@@ -4,7 +4,7 @@ package com.delta.css.excp;
 
 public class DbSvcExcp extends Exception {
     private static final long serialVersionUID = 1L;
-    private Exception exception;
+    private final Exception exception;
 
     /**
      * Creates a new DbSvcExcp wrapping another exception, and with a detail
@@ -75,6 +75,7 @@ public class DbSvcExcp extends Exception {
         return exception == null ? this : exception;
     }
 
+    @Override
     public String toString() {
 
         if (exception instanceof DbSvcExcp) {
