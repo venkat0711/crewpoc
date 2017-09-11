@@ -4,7 +4,7 @@
 	<groupId>com.delta.css</groupId>
 	<artifactId>CrewPoc</artifactId>
 	<packaging>war</packaging>
-	<version>1.0</version>
+	<!--<version>1.0</version>-->
 	<name>CrewPoc Maven Webapp</name>
 	<repositories>
 		<repository>
