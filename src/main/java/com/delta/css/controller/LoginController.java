@@ -28,7 +28,7 @@ public class LoginController {
 
 		String output = null;
 		userId="0000"+userId;
-		request.getAttribute("password");
+		crewRotnAtvyRestBo = new CrewRotnAtvyRestBo();
 		if (crewRotnAtvyRestBo.validation(userId, pass)) {
 			request.getSession().setAttribute("usersession", userId);
 			output = "{\"userId\" : " + "\"" +userId +"\""+ ",  \"Status\" : \"SUCCESS\",\"message\" : \"Valid User\"}";
