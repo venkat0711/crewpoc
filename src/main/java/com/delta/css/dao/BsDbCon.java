@@ -59,7 +59,6 @@ public class BsDbCon {
     @SuppressWarnings("rawtypes")
     public Collection getRows(String statementId) throws DbSvcExcp {
         List list;
-       // SqlSession sqlSession = sqlSessionFactory.openSession(dbConfig.getDataSource());
         SqlSession sqlSession = sqlSessionFactory.openSession();
         try {
             list = sqlSession.selectList(statementId);

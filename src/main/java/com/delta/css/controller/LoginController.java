@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.delta.css.utils.CssApiCnst;
 
 import com.delta.css.bo.CrewRotnAtvyRestBo;
 
@@ -22,35 +23,37 @@ public class LoginController {
 	CrewRotnAtvyRestBo crewRotnAtvyRestBo;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public @ResponseBody String login(HttpServletRequest request, @RequestParam("userId") String userId,
+	public @ResponseBody String login(HttpServletRequest request, @RequestParam(CssApiCnst.USER_ID) String userId,
 			@RequestParam("password") String pass) throws IOException {
-		//public @ResponseBody String login(HttpServletRequest request) throws IOException {
-
-		String output = null;
 		userId="0000"+userId;
-		crewRotnAtvyRestBo = new CrewRotnAtvyRestBo();
+		String username=null;
+		crewRotnAtvyRestBo= new CrewRotnAtvyRestBo();
+		if (userId.equals(CssApiCnst.USER_ONE))
+		{
+			username="Krasnov, Gary J";
+		}
+		else
+		{
+			username="Seifried, Mark A";
+		}
 		if (crewRotnAtvyRestBo.validation(userId, pass)) {
 			request.getSession().setAttribute("usersession", userId);
-			output = "{\"userId\" : " + "\"" +userId +"\""+ ",  \"Status\" : \"SUCCESS\",\"message\" : \"Valid User\"}";
+			return  "{\"userId\" : " + "\"" +userId +"\""+ ",\"username\" : " + "\"" +username +"\""+ ", \"Status\" : \"SUCCESS\",\"message\" : \"Valid User\"}";
+			
 
 		} else {
 			
-			output = "{\"userId\" : " + "\"" +userId +"\""+ ",  \"Status\" : \"FAILED\",\"message\" : \"Invalid User\"}";
+			return  "{\"userId\" : " + "\"" +userId +"\""+ ",\"username\" : " + "\"" +username +"\""+ ",  \"Status\" : \"FAILED\",\"message\" : \"Invalid User\"}";
 		}
-		return output;
+		
 
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	/*public @ResponseBody String login(HttpServletRequest request, @RequestParam("userId") String userId
-			) throws IOException {*/
 		public @ResponseBody String logout(HttpServletRequest request) throws IOException {
-		String output = null;
 		String userId=(String) request.getSession().getAttribute("usersession");
 			request.getSession().invalidate();
-			output = "{\"userId\" : " + "\"" +userId +"\""+ ",  \"Status\" : \"SUCCESS\",\"message\" : \"Successfully LogOut\"}";
-
-			return output;
+			return  "{\"userId\" : " + "\"" +userId +"\""+ ",  \"Status\" : \"SUCCESS\",\"message\" : \"Successfully LogOut\"}";
 	}
 
 }

@@ -30,7 +30,7 @@
 		<result property="atvy.atvyBegDt" column="ATVY_STT_BEG_GDTTM" />
 		<result property="atvy.atvyEndDt" column="ATVY_STT_END_GDTTM" />
 		<result property="atvy.atvyDs" column="ATVY_STT_DS" />
-		<result property="atvy.bs" column="ATVY_BS_CD" />
+		<result property="atvy.bs" column="atvy_crew_BS_CD" />
 		<result property="rotn.pltPstnCd" column="PLT_PSTN_CD" />
 		<result property="rotn.emplId" column="ROTN_EMPL_ID" />
 		<result property="atvy.emplId" column="ATVY_EMPL_ID" />
@@ -56,7 +56,7 @@
 		<result property="rst.genArptCd" column="GEN_ARPT_CD" />
 		<result property="rst.genArptLoc" column="GEN_ARPT_LOC" />
 		<result property="rst.genDispOrd" column="GEN_DISP_ORD" />
-		<result property="rst.cutoffTimeFrom" column="GEN_DISP_ORD" />
+		<result property="rst.cutoffTimeFrom" column="CUTOFF_TIME_FROM" />
 		<result property="rst.cutoffTimeTo" column="CUTOFF_TIME_TO" />
 		<result property="rst.genComment" column="GEN_COMMENT" />
 		<result property="rst.arptToHotelDomTo" column="ARPT_TO_HOTEL_DOM_TO" />
@@ -81,8 +81,7 @@
 		<result property="calDt" column="caldate" />
 
 
-
-</resultMap>
+	</resultMap>
 
 	<select id="getCrewRotnAtvyRest" resultMap="CrewRotnAtvyRest" parameterType="com.delta.css.vo.CrewInfoInputVo">
 		select event,
@@ -211,14 +210,14 @@
 		RSET_EMPL_ID, EMPL_ROLE_CD as RSET_EMPL_ROLE_CD,
 		GEN_ARPT_CD, GEN_ARPT_LOC, GEN_DISP_ORD, CUTOFF_TIME_FROM, CUTOFF_TIME_TO,
 		GEN_COMMENT, ARPT_TO_HOTEL_DOM_TO, ARPT_TO_HOTEL_DOM_FROM,
-		ARPT_TO_HOTEL_DOM_FROM - ARPT_TO_HOTEL_DOM_TO AS
+		ARPT_TO_HOTEL_DOM_TO - ARPT_TO_HOTEL_DOM_FROM AS
 		ARPT_TO_HOTEL_DOM_TOTAL, ARPT_TO_HOTEL_INTL_FROM,
-		ARPT_TO_HOTEL_INTL_TO, ARPT_TO_HOTEL_INTL_FROM - ARPT_TO_HOTEL_INTL_TO
+		ARPT_TO_HOTEL_INTL_TO, ARPT_TO_HOTEL_INTL_TO - ARPT_TO_HOTEL_INTL_FROM
 		AS ARPT_TO_HOTEL_INTL_TOTAL, HOTEL_TO_AIRPORT_DOM_TO,
-		HOTEL_TO_AIRPORT_DOM_FROM, HOTEL_TO_AIRPORT_DOM_FROM -
-		HOTEL_TO_AIRPORT_DOM_TO AS HOTEL_TO_AIRPORT_DOM_TOTAL,
+		HOTEL_TO_AIRPORT_DOM_FROM, 
+		HOTEL_TO_AIRPORT_DOM_TO - HOTEL_TO_AIRPORT_DOM_FROM AS HOTEL_TO_AIRPORT_DOM_TOTAL,
 		HOTEL_TO_AIRPORT_INTL_FROM, HOTEL_TO_AIRPORT_INTL_TO,
-		HOTEL_TO_AIRPORT_INTL_FROM - HOTEL_TO_AIRPORT_INTL_TO AS
+		HOTEL_TO_AIRPORT_INTL_TO - HOTEL_TO_AIRPORT_INTL_FROM AS
 		HOTEL_TO_AIRPORT_INTL_TOTAL, PROVIDER_NAME, TRANS_COMMENT,
 		HOTEL_TRANS_BEGIN_DATE, HOTELS_ARPT_BEGIN_DATE, HOTELS_ARPT_END_DATE,
 		TRAVEL_COMMENT, null as SCH_DPRT_GDTTM, null as SCH_ARR_GDTTM
@@ -230,7 +229,7 @@
 		) as allEvents, (SELECT @row_number:=0) AS t
 		order by caldate desc
 
-		</select>
+	</select>
 
 
 

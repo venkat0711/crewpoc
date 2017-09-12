@@ -8,8 +8,10 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import com.delta.css.excp.BsnObjExcp;
 import com.delta.css.utils.BsLogger;
 import com.delta.css.utils.CssApiCnst;
 
@@ -30,13 +32,13 @@ public class DataSrcConfig {
     	DriverManagerDataSource dataSource = new DriverManagerDataSource();
         try {
             dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-            dataSource.setUsername("crew_user");
-            dataSource.setPassword("Dev0psl@b");
+            dataSource.setUsername("root");
+            dataSource.setPassword("admin");
             dataSource.setUrl("jdbc:mysql://" + CssApiCnst.HOST + ":" + CssApiCnst.PORT + "/crew");
             
 
         } catch (IllegalArgumentException e) {
-            LOGGER.debug("In side DataSrcConfig IllegalArgumentException error:" + e.getMessage());
+            LOGGER.debug("In side DataSrcConfig IllegalArgumentException error:" + e.getMessage(),e);
         }
         
 			return dataSource;
@@ -46,12 +48,17 @@ public class DataSrcConfig {
     
     
     @Bean
-    public SqlSessionFactory getSqlSessionFactory() throws Exception {
+    public SqlSessionFactory getSqlSessionFactory() throws BsnObjExcp   {
 
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(getDataSource());
         sessionFactory.setConfigLocation(new ClassPathResource(CssApiCnst.SQL_CONFIG));
-        return sessionFactory.getObject();
+        try {
+			return sessionFactory.getObject();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			 throw new BsnObjExcp(e.getMessage(), e);
     }
     
+}
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.delta.css.dao.CrewRotnAtvyRestDaoIfc;
 import com.delta.css.dao.CrewRotnAtvyRestDaoImpl;
 import com.delta.css.excp.DataAcesExcp;
+import com.delta.css.utils.CssApiCnst;
 import com.delta.css.vo.CrewInfoInputVo;
 import com.delta.css.vo.CrewRotnAtvyRestDtlsVo;
 import com.delta.css.vo.MasterVo;
@@ -48,7 +49,7 @@ public class CrewRotnAtvyRestBo {
 		return masterVo2;
 	}
 	public Boolean validation(String userId,String pass){
-	if(userId!=null && (userId.equals("0000111111") || userId.equals("0000222222"))&& pass.equals("delta_user")){
+	if(userId!=null && (userId.equals(CssApiCnst.USER_ONE) || userId.equals(CssApiCnst.USER_TWO))&& pass.equals(CssApiCnst.DELTA_USER)){
 		 return true;
 	 }
 	else

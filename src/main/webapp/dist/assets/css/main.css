@@ -48,20 +48,21 @@ header .header-alert {
 }
 
 header .header-alert .notification {
-    background: url(../images/Alarm.png);
+    /*background: url(../images/Alarm.png);
     background-repeat: no-repeat;
     height: 5.3rem;
-    background-position: 0% -4px;
+    background-position: 0% -4px;*/
+    padding-top: 0.6rem;
 }
 
 header .header-alert .flight-rotation {
     font-size: 1.4rem;
     background: url(../images/Rotation-32.png);
     background-repeat: no-repeat;
-    height: 5.3rem;
-    background-position: 0 9px;
+    height: 3.6rem;
+    background-position: 0 2px;
     padding-left: 5rem;
-    padding-top: 1.4rem;
+    padding-top: 0.8rem;
 }
 
 header .header-alert .cross-alarm {
@@ -75,7 +76,8 @@ header .header-alert .cross-alarm {
 }
 
 .row.time-det {
-    padding: 15px 5px;
+    padding: 7px 5px;
+    font-size: 15px;
 }
 
 .separator {
@@ -245,6 +247,14 @@ header .header-alert .cross-alarm {
     right: 38px;    
 }
 
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.selected-dt {
+    background-color: aliceblue; 
+}
+
+.calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.selected-dt.other-month {
+    background-color: #fff; 
+}
+
 .calendar td {
     padding: 0;
     vertical-align: top;
@@ -261,6 +271,15 @@ header .header-alert .cross-alarm {
 .other-month .cal-day-number {
     opacity: 0.3;
     filter: alpha(opacity=30);    
+}
+
+
+.legendIcons {
+    border: 1px #003969 solid; padding: 5px; margin-left: 0 !important;
+}
+
+.legendIcons li {
+    width: 32%;
 }
 
 .loginBox {
@@ -463,12 +482,19 @@ header .header-alert .cross-alarm {
     margin: 2rem 1rem;
 }
 
+.activity-box .journey-arrow {
+    background: url("../images/Arrow-Connecting-Journey.png");
+    background-repeat: no-repeat;
+    height: 10rem;
+    background-position: 4.5rem 4rem;
+}
+
 #nextMonth, #prevMonth {
     cursor: pointer;
 }
 
 .rest .restInfoWrapper {
-    padding: 15px;
+    padding: 5px;
     border: 1px solid #ccc;
     margin: 5px;
 }
@@ -480,7 +506,7 @@ header .header-alert .cross-alarm {
 }
 
 .restInfoWrapper  .info {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 
 .restInfoWrapper  .info .grey-font {
@@ -526,6 +552,10 @@ header .header-alert .cross-alarm {
     }
     .dest-box .fromTime, .toTime {
         width: 15.0em;
+    }
+
+    .activity-box .journey-arrow {
+        background-position: 3.5rem 4rem;
     }
 }
 
@@ -586,15 +616,30 @@ header .header-alert .cross-alarm {
 
 @media (max-width: 568px) { 
     .dest-box .fromTime, .toTime {
-        width: 34em;
+        width: 38.7em;
+    }
+
+    #main-content {
+        padding-right: 5px!important;
+        padding-left: 5px!important; 
+    }
+
+    #main-content .conWrapper {
+        padding-right: 5px!important;
+        padding-left: 5px!important; 
+    }
+
+    .container-fluid.accordian {
+        padding-right: 5px !important;
+        padding-left: 5px !important; 
     }
 }
 
 @media (max-width: 400px) {    
     
     .notification {
-        background-size: 24px 34px !important;
-        background-position: 0% 10px !important;
+        /*background-size: 24px 34px !important;
+        background-position: 0% 10px !important;*/
     }
 
     .flight-rotation {
@@ -652,7 +697,22 @@ header .header-alert .cross-alarm {
     }
 
     .dest-box .fromTime, .toTime {
-        width: 19.3em;
+        width: 23.8em;
+    }
+
+    
+
+    .calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .rotation {
+        bottom: 5px;
+        right: 34px;
+    }
+    .calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .rest {
+        bottom: 5px;
+        right: 5px;
+    }
+    .calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .activity {
+        bottom: 5px;
+        right: 18px;
     }
 }
 
@@ -663,13 +723,26 @@ header .header-alert .cross-alarm {
 
     .dest-box .fromTime, .toTime {
         font-size: 11px;
-        width: 17.9em;
+        width: 23.2em;
         margin-left: 1.3em;
     }
 
 
     .activity-box .activity-time-box {
         margin: 2rem 0.5rem;
+    }
+
+    .calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .rotation {
+        bottom: 5px;
+        right: 29px;
+    }
+    .calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .rest {
+        bottom: 5px;
+        right: 1px;
+    }
+    .calendar .cal-view-wrapper .cal-view table.cal-border-separate .cal-week .cal-day-content.has-event .activity {
+        bottom: 5px;
+        right: 13px;
     }
 
     

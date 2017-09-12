@@ -79,7 +79,7 @@ public class CssPropsUtils {
      * 
      * @throws FileNotFoundException , IOException
      */
-    public void loadProperties() throws FileNotFoundException, IOException {
+    public void loadProperties() {
         if (getProperties().isEmpty()) {
             setProperties(getPrpyFile());
         }
@@ -87,9 +87,19 @@ public class CssPropsUtils {
             InputStream is;
             is = getInputStreamFromClassLoader(CssApiCnst.SVC_PROP_FILE);
             if (is == null) {
-                is = getPropertiesFromWorkingDirectory(CssApiCnst.SVC_PROP_FILE);
+                try {
+					is = getPropertiesFromWorkingDirectory(CssApiCnst.SVC_PROP_FILE);
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					LOGGER.error(e);
+				}
             }
-            loadPropertiesFromInputStream(is);
+            try {
+				loadPropertiesFromInputStream(is);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				LOGGER.error(e);
+			}
         }
     }
 
@@ -102,7 +112,7 @@ public class CssPropsUtils {
      * @throws FileNotFoundException
      * @throws Exception
      */
-    public String getProperty(String propertyName) throws FileNotFoundException, IOException {
+    public String getProperty(String propertyName)  {
         if (getProperties().isEmpty()) {
             loadProperties();
         }
@@ -118,7 +128,7 @@ public class CssPropsUtils {
      * @throws FileNotFoundException 
      * @throws Exception
      */
-    public String getAvailableProperty(String propertyName) throws FileNotFoundException, IOException  {
+    public String getAvailableProperty(String propertyName)   {
         return getProperty(propertyName);
     }
 

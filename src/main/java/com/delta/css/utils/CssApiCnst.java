@@ -57,8 +57,13 @@ public class CssApiCnst {
     public static final String APP_DESC = "This API provides availability and count of meals by passengers, cabin, and seats.";
     public static String HOST = "52.1.2.26";
     public static String PORT = "3306";
-
-    
+    public static final String EMPL_ID ="emplId";
+    public static final String DATE ="date";
+    public static final String DELTA_USER="delta_user";
+    public static final String USER_ONE="0000111111";
+    public static final String USER_TWO="0000222222";
+    public static final String USER_ID="userId";
+    public static final String USER_SESSION="usersession";
     public static String getPrpyLoc() {
        /* System.out.println(System.getProperty(SYS_LOC_PRPY));
         String prpy = System.getProperty(SYS_LOC_PRPY);
