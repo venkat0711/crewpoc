@@ -32,8 +32,8 @@ public class DataSrcConfig {
     	DriverManagerDataSource dataSource = new DriverManagerDataSource();
         try {
             dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-            dataSource.setUsername("root");
-            dataSource.setPassword("admin");
+            dataSource.setUsername("crew_user");
+            dataSource.setPassword("Dev0psl@b");
             dataSource.setUrl("jdbc:mysql://" + CssApiCnst.HOST + ":" + CssApiCnst.PORT + "/crew");
             
 
