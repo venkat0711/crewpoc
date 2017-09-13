@@ -65,6 +65,26 @@ header .header-alert .flight-rotation {
     padding-top: 0.8rem;
 }
 
+header .header-alert .flight-rest {
+    font-size: 1.4rem;
+    background: url(../images/Rest-32.png);
+    background-repeat: no-repeat;
+    height: 3.6rem;
+    background-position: 0 2px;
+    padding-left: 5rem;
+    padding-top: 0.8rem;
+}
+
+header .header-alert .flight-activity {
+    font-size: 1.4rem;
+    background: url(../images/Rest-32.png);
+    background-repeat: no-repeat;
+    height: 3.6rem;
+    background-position: 0 2px;
+    padding-left: 5rem;
+    padding-top: 0.8rem;
+}
+
 header .header-alert .cross-alarm {
     background: url(../images/Cross-Alarm.png);
     background-repeat: no-repeat;
@@ -334,15 +354,19 @@ header .header-alert .cross-alarm {
 }
 
 .panel-title .icon.rotation {
-    background: url("../images/Rotation-32.png") 1.5rem top no-repeat
+    background: url("../images/Rotation-32.png") 1.5rem top no-repeat;
+    min-width: 173px;
 }
 
 .panel-title .icon.activity {
-    background: url("../images/Activity-32.png") 1.5rem top no-repeat !important
+    background: url("../images/Activity-32.png") 1.5rem top no-repeat !important;
+    min-width: 173px;
+
 }
 
 .panel-title .icon.rest {
-    background: url("../images/Rest-32.png") 1.5rem top no-repeat !important
+    background: url("../images/Rest-32.png") 1.5rem top no-repeat !important;
+    min-width: 173px;
 }
 
 .panel-title .dt-1 {
@@ -632,6 +656,21 @@ header .header-alert .cross-alarm {
     .container-fluid.accordian {
         padding-right: 5px !important;
         padding-left: 5px !important; 
+    }
+
+    header .header-alert .notification {
+        padding: 0.6rem 0 0 0;
+    }
+
+    header .header-alert .flight-activity {
+        height: 3.9rem;
+        background-position: 2px 2px;
+        padding-left: 4rem;
+        padding-top: 0.8rem;
+    }
+
+    .row.time-det {
+        font-size: 13px;
     }
 }
 

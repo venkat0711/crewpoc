@@ -41,8 +41,8 @@ public class RotnVo {
 	public void setSchDptrGdttm(String schDptrGdttm) {
 		this.schDptrGdttm = schDptrGdttm;
 	}
-
-	/**
+    
+    /**
      * @return the prngNb
      */
     public String getPrngNb() {

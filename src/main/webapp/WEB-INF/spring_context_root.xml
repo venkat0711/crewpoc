@@ -20,11 +20,10 @@
 	<context:component-scan base-package="com.delta.css.*"></context:component-scan>
 	
 	
-	<bean class="com.delta.css.config.ApplicationSwaggerConfig" id="swagger2Config"></bean> 
+	<!-- <bean class="com.delta.css.config.ApplicationSwaggerConfig" id="swagger2Config"></bean> --> 
 	<mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"></mvc:resources>
 	<mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"></mvc:resources>
-
-<mvc:cors>
+	<mvc:cors>
     <mvc:mapping path="/**"
         allowed-origins="*"
         allowed-headers="Content-Type, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Authorization, X-Requested-With, requestId, Correlation-Id"

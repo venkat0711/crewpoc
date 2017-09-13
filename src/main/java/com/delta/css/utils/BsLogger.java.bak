@@ -11,7 +11,7 @@ public class BsLogger extends Logger {
 	/**
 	 * @param name
 	 */
-	public BsLogger(String name) {
+	protected BsLogger(String name) {
 		super(name);
 	}
 

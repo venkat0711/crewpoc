@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import com.delta.css.bo.CrewRotnAtvyRestBo;
 import com.delta.css.excp.DataAcesExcp;
+import com.delta.css.utils.BsLogger;
+import com.delta.css.utils.CssApiCnst;
 import com.delta.css.vo.CrewInfoInputVo;
 
 public class CrewPocTest {
@@ -20,7 +22,7 @@ public class CrewPocTest {
 	public void testUptoDateCount() {
 		CrewInfoInputVo crewInfoInputVo = new CrewInfoInputVo();
 		crewInfoInputVo.setDate("2017-09-08");
-		crewInfoInputVo.setEmplId("0000111111");
+		crewInfoInputVo.setEmplId(CssApiCnst.USER_ONE);
 		try {
 			crewRotnAtvyRestBo.uptoDateCount(crewInfoInputVo);
 		} catch (DataAcesExcp e) {
@@ -30,8 +32,10 @@ public class CrewPocTest {
 	 
 	 @Test
 	public void testvalidation() {
-		String userId = "0000111111";
-		String pass = "delta_user";
+		String userId = CssApiCnst.USER_ONE;
+		String pass = CssApiCnst.DELTA_USER;
+		CssApiCnst.abc();
+		BsLogger bsLogger = new BsLogger("logger");
 		crewRotnAtvyRestBo.validation(userId, pass);
 	}
 

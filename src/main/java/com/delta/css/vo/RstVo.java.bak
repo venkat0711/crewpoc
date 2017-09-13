@@ -229,8 +229,8 @@ public class RstVo {
 	public void setTravelComment(String travelComment) {
 		this.travelComment = travelComment;
 	}
-
-	/**
+    
+    /**
      * @return the rstTp
      */
     public String getRstTp() {
