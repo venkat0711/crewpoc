@@ -48,7 +48,7 @@ public class CssApiCnst {
     public static final String APP_ROOT = "/crew";
     public static final String APP_NAME = "Meal API";
     public static final String APP_DESC = "This API provides availability and count of meals by passengers, cabin, and seats.";
-    public static String HOST = "34.224.25.101";
+    public static String HOST = "52.1.2.26";
     public static String PORT = "3306";
     public static final String EMPL_ID ="emplId";
     public static final String DATE ="date";
