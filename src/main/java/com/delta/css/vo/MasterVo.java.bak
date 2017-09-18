@@ -1,5 +1,6 @@
 package com.delta.css.vo;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +14,7 @@ public class MasterVo {
 		return crewRotnAtvyRestDtlsMap;
 	}
 
-	public void setCrewRotnAtvyRestDtlsMap(Map<String, List<CrewRotnAtvyRestDtlsVo>> crewRotnAtvyRestDtlsMap) {
+	public void setCrewRotnAtvyRestDtlsMap(HashMap<String, List<CrewRotnAtvyRestDtlsVo>> crewRotnAtvyRestDtlsMap) {
 		this.crewRotnAtvyRestDtlsMap = crewRotnAtvyRestDtlsMap;
 	}
 

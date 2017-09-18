@@ -1,16 +1,12 @@
 package com.delta.css.utils;
 
 import org.springframework.stereotype.Component;
-//import com.delta.soa.flight.operations.meal.v1.EndPoint;
 
-/**
- * MealApi constant class for static declaration and methods
- * 
- */
 @Component
 public class CssApiCnst {
-
-    public static final String SVC_PROP_FILE = "MealApi.properties";
+    private CssApiCnst() {
+	}
+	public static final String SVC_PROP_FILE = "MealApi.properties";
     public static final String LOG4J_CNFG_XML_FILE = "/MealApiLog4jCnfg.xml";
     public static final String SYS_LOC_PRPY = "meal.prop.loc";
     public static final String SYS_LOC_LOG = "meal.log.loc";
@@ -57,8 +53,4 @@ public class CssApiCnst {
     public static final String USER_TWO="0000222222";
     public static final String USER_ID="userId";
     public static final String USER_SESSION="usersession";
-    
-    public static void abc(){
-    	
-    }
 }

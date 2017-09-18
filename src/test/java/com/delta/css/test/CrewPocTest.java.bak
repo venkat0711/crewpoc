@@ -34,6 +34,8 @@ public class CrewPocTest {
 	public void testvalidation() {
 		String userId = CssApiCnst.USER_ONE;
 		String pass = CssApiCnst.DELTA_USER;
+		CssApiCnst.abc();
+		BsLogger bsLogger = new BsLogger("logger");
 		crewRotnAtvyRestBo.validation(userId, pass);
 	}
 
