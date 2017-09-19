@@ -36,12 +36,11 @@ public class CrewPocExpTest {
 		dataAcesExcp.getRootCause();
 		dataAcesExcp.toString();
 	}
-/*
+	
 	@Test
 	 public void testDbSvcExcp() {
 		dbSvcExcp.getException();
 		dbSvcExcp.getRootCause();
 		dbSvcExcp.toString();
 	}
-*/
 }
