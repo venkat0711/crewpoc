@@ -239,6 +239,11 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release-plugin</artifactId>
+						<version>5.2.2</version>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -256,4 +261,8 @@
         <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
     </snapshotRepository>
     </distributionManagement>
+	<scm>
+		<connection>scm:git:https://github.com/mdshamsnezami/crewpoc.git</connection>
+	</scm>
+			
 </project>
